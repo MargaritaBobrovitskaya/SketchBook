@@ -4,4 +4,4 @@
 
 Платформа: Android
 
-[Требования]:(//docs/requirementsDoc/srs.md)
+[Требования](docs/requirementsDoc/srs.md)
