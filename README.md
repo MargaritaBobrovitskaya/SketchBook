@@ -10,4 +10,8 @@
 
 [Диаграммы активностей](docs/diagramsDoc/activity.md)
 
-[Диаграммы последовательностей](docs/diagramsDoc/sequence.md)
+[Диаграммы состояния](docs/diagramsDoc/state.md)
+
+[Диаграммa классов](docs/diagramsDoc/class.md)
+
+[Диаграмма компонентов](docs/diagramsDoc/deployment.md)
