@@ -8,8 +8,6 @@
 
 [Диаграмма вариантов использования](docs/diagramsDoc/useCase.md)
 
-[Диаграммы последовательностей](docs/diagramsDoc/sequence.md)
-
 [Диаграммы активностей](docs/diagramsDoc/activity.md)
 
 [Диаграммы состояния](docs/diagramsDoc/state.md)
@@ -17,3 +15,7 @@
 [Диаграммa классов](docs/diagramsDoc/class.md)
 
 [Диаграмма компонентов](docs/diagramsDoc/deployment.md)
+
+[План тестирования](Testing/TestPlan.md)
+
+[Результат тестов](Testing/TestResults.md)
