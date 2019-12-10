@@ -8,6 +8,8 @@
 
 [Диаграмма вариантов использования](docs/diagramsDoc/useCase.md)
 
+[Диаграммы последовательностей](docs/diagramsDoc/sequence.md)
+
 [Диаграммы активностей](docs/diagramsDoc/activity.md)
 
 [Диаграммы состояния](docs/diagramsDoc/state.md)
