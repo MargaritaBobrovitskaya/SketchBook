@@ -1,74 +1,49 @@
-package margarita_bobrovitskaya.mail.ru.sketchbook;
+package margarita_bobrovitskaya.mail.ru.sketchbook2;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.net.Uri;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.SeekBar;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+public class WorkingActivity extends AppCompatActivity implements View.OnClickListener {
 
-public class WorkingActivity extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
-    static final  int GALLERY_REQUEST = 1;  // КОНСТАНТА ДЛЯ ИНТЕНТА ГАЛЕРЕИ
+//    int mColor = Color.RED;
+//    int mWidth = 5;
 
-    ImageView holst;          // Холст
+//    DrawView holst;
+/*
+    ImageView btnClose2;
+    ImageView btnClear;
+    ImageView btnSave;
+    ImageView btnTools;
+    ImageView btnLeftArrow;
+    ImageView btnRightArrow;
 
-    ImageView btnClose2;      // Иконка закрытия
-    ImageView btnClear;       // Иконка очистки экрана
-    ImageView btnSave;        // Иконка сохранения картинки
-    ImageView btnTools;       // Иконка инструменты
-    ImageView btnLeftArrow;   // Иконка отмены последнего действия
-    ImageView btnRightArrow;  //Иконка повторного действия
-
-    ImageView btnRed;         // Иконка красного цвета
-    ImageView btnOrange;      // Иконка оранжевого цвета
-    ImageView btnYellow;      // Иконка желтого цвета
-    ImageView btnGreen;       // Иконка зеленого цвета
-    ImageView btnBlue;        // Иконка голубого цвета
-    ImageView btnDarkBlue;    // Иконка синего цвета
-    ImageView btnViolet;      // Иконка фиолетового цвета
-
-    String name ="";           // Имя сохраняемого файла
-    int mColor = Color.RED;    // Цвет пера
-    int mWidth = 1;             //Ширина пера
-
-    // Классы паттерна мементо
-    Originator originator;
-    Caretaker caretaker;
-
-
-  //  DrawView mDrawView = new DrawView(this, mColor, mWidth, );
+    ImageView btnRed;
+    ImageView btnOrange;
+    ImageView btnYellow;
+    ImageView btnGreen;
+    ImageView btnBlue;
+    ImageView btnDarkBlue;
+    ImageView btnViolet;
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.working_activity);
-       // setContentView(new DrawView(this, mColor, mWidth, 0, 0));
+//        setContentView(R.layout.activity_working);
+        setContentView(new DrawView(this));
+//        holst = (DrawView) findViewById(R.id.drawView);
 
-        holst = (ImageView) findViewById(R.id.holst);
-
+/*
         btnClose2 = (ImageView) findViewById(R.id.close2_btn);
         btnClear = (ImageView) findViewById(R.id.clear_btn);
         btnSave = (ImageView) findViewById(R.id.save_btn);
         btnTools = (ImageView) findViewById(R.id.tools_btn);
-        btnLeftArrow = (ImageView) findViewById(R.id.leftArrow_btn);
-        btnRightArrow = (ImageView) findViewById(R.id.rightArrow_btn);
+        btnLeftArrow = (ImageView) findViewById(R.id.left_arrow_btn);
+        btnRightArrow = (ImageView) findViewById(R.id.right_arrow_btn);
 
         btnRed = (ImageView) findViewById(R.id.red_btn);
         btnOrange = (ImageView) findViewById(R.id.orange_btn);
@@ -77,16 +52,20 @@ public class WorkingActivity extends AppCompatActivity implements View.OnClickLi
         btnBlue = (ImageView) findViewById(R.id.blue_btn);
         btnDarkBlue = (ImageView) findViewById(R.id.darkblue_btn);
         btnViolet = (ImageView) findViewById(R.id.violet_btn);
-        //Загружаем  холст
-        String mai = getIntent().getStringExtra("log"); // Логическая переменная из MainActivity которая определяет нужно загружать картинку из памяти или нет
+
+                //Загружаем  холст
+   /*    String mai = getIntent().getStringExtra("log"); // Логическая переменная из MainActivity которая определяет нужно загружать картинку из памяти или нет
         if (mai.equals("1")){
             Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
             photoPickerIntent.setType("image/*");
             startActivityForResult(photoPickerIntent, GALLERY_REQUEST);
+
         }
-        //обработка прикосновениями экрана
-        holst.setOnTouchListener(this);
-        // Присваиваем обраблтчик кнопкам
+        */
+
+
+        /*
+
         btnClose2.setOnClickListener(this);
         btnClear.setOnClickListener(this);
         btnSave.setOnClickListener(this);
@@ -101,9 +80,12 @@ public class WorkingActivity extends AppCompatActivity implements View.OnClickLi
         btnBlue.setOnClickListener(this);
         btnDarkBlue.setOnClickListener(this);
         btnViolet.setOnClickListener(this);
+       */
 
     }
 
+    //загрузка картинки
+    /*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
@@ -125,30 +107,25 @@ public class WorkingActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-    }
+     */
 
     @Override
     public void onClick(View v) {
-
-        switch (v.getId()){
+        /*
+        switch (v.getId()) {
             // нажимаем иконку закрыть
             case R.id.close2_btn: {
                 this.onDestroy();
             }
-                break;
-            // нажимаем иконку очистить экран
+            break;
             case R.id.clear_btn: {
-                DrawView mDrawView = new DrawView(this, mColor, mWidth,0,0);
-                mDrawView.bitmap.eraseColor(Color.WHITE);
-                holst.setImageBitmap(mDrawView.bitmap);
+
+                holst.bitmap.eraseColor(Color.WHITE);
+
             }
-                break;
-            // нажимаем иконку сохранить картинку
-            case R.id.save_btn:{
-                Button saveButton = (Button) findViewById(R.id.save_button);
+            break;
+            case R.id.save_btn: {
+                                Button saveButton = (Button) findViewById(R.id.save_button);
                 EditText nameImage = (EditText) findViewById(R.id.editText);   //введем имя файла
 
                 Dialog dialogSave = new Dialog(WorkingActivity.this);
@@ -163,9 +140,9 @@ public class WorkingActivity extends AppCompatActivity implements View.OnClickLi
                 });
 
             }
-                break;
-            // нажимаем иконку открыть окно инструментов
-            case R.id.tools_btn:{
+            break;
+            case R.id.tools_btn: {
+
                 SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
                 ImageView pen = (ImageView) findViewById(R.id.pen_btn);
                 ImageView eraser = (ImageView) findViewById(R.id.eraser_btn);
@@ -202,61 +179,55 @@ public class WorkingActivity extends AppCompatActivity implements View.OnClickLi
                         mColor = Color.WHITE;
                     }
                 });
+
+
             }
-                break;
-            // нажимаем иконку отмены последнего действия
-            case R.id.leftArrow_btn:{
+            break;
+            case R.id.left_arrow_btn: {
                 originator.getState();
             }
-                break;
-            // нажимаем иконку повторения действия
-            case R.id.rightArrow_btn:{
+            break;
+            case R.id.right_arrow_btn: {
                 originator.getState();
                 caretaker.setMemento(originator.saveState());
+
             }
-                break;
-            // нажимаем иконку красного цвета
-            case R.id.red_btn:{
+            break;
+
+            case R.id.red_btn: {
                 mColor = Color.RED;
             }
-                break;
-            // нажимаем иконку оранжевого цвета
-            case R.id.orange_btn:{
+            break;
+            case R.id.orange_btn: {
                 mColor = 0xFF9900;
             }
-                break;
-            // нажимаем иконку желтого цвета
-            case R.id.yellow_btn:{
+            break;
+            case R.id.yellow_btn: {
                 mColor = Color.YELLOW;
             }
-                break;
-            // нажимаем иконку зеленого цвета
-            case R.id.green_btn:{
+            break;
+            case R.id.green_btn: {
                 mColor = Color.GREEN;
             }
-                break;
-            // нажимаем иконку голубого цвета
-            case R.id.blue_btn:{
+            break;
+            case R.id.blue_btn: {
                 mColor = 0x00FFFF;
             }
-                break;
-            // нажимаем иконку синего цвета
-            case R.id.darkblue_btn:{
+            break;
+            case R.id.darkblue_btn: {
                 mColor = 0x2b78e4;
             }
             break;
-            // нажимаем иконку фиолетового цвета
-            case R.id.violet_btn:{
+            case R.id.violet_btn: {
                 mColor = 0x9900FF;
             }
             break;
+
+
         }
 
-    }
-
-
-
-    private String SavePicture(Bitmap bmp, String str)
+        //сохраняем картинку
+            private String SavePicture(Bitmap bmp, String str)
     {
         OutputStream fOut = null;
         try {
@@ -281,48 +252,12 @@ public class WorkingActivity extends AppCompatActivity implements View.OnClickLi
         return  Environment.getExternalStorageDirectory() + "/";
     }
 
+        */
+    }
+/*
     @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        float x = event.getX();
-        float y = event.getY();
-        if(event.getAction() == MotionEvent.ACTION_MOVE){
-          //  new DrawView(this, mColor,mWidth, x, y);
-            originator = new Originator();
-            caretaker = new Caretaker();
-        }
-        return true;
+    protected void onDestroy(){
+        super.onDestroy();
     }
-
-    class DrawView extends View {
-
-        Bitmap bitmap;      //Экран
-
-        Paint p;            //Перо
-        int color;
-        int width;
-        float x, y;
-
-        public DrawView(Context context, int color, int width, float x, float y) {
-            super(context);
-
-            this.color = color;
-            this.width = width;
-            this.x = x;
-            this.y = y;
-            bitmap = Bitmap.createBitmap(300, 300, Bitmap.Config.RGB_565);
-            p = new Paint();
-
-        }
-
-        @Override
-        protected void onDraw(Canvas canvas) {
-            //цвет кисти
-            p.setColor(color);
-            //толщина кисти
-            p.setStrokeWidth(width);
-            canvas.drawPoint(x, y, p);
-            invalidate();
-        }
-
-    }
+    */
 }

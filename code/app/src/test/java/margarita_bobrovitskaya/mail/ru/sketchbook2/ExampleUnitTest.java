@@ -1,4 +1,4 @@
-package margarita_bobrovitskaya.mail.ru.sketchbook;
+package margarita_bobrovitskaya.mail.ru.sketchbook2;
 
 import org.junit.Test;
 

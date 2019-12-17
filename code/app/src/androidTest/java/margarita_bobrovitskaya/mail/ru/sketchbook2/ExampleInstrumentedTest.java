@@ -1,4 +1,4 @@
-package margarita_bobrovitskaya.mail.ru.sketchbook;
+package margarita_bobrovitskaya.mail.ru.sketchbook2;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("margarita_bobrovitskaya.mail.ru.sketchbook", appContext.getPackageName());
+        assertEquals("margarita_bobrovitskaya.mail.ru.sketchbook2", appContext.getPackageName());
     }
 }

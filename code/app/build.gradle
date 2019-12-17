@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "margarita_bobrovitskaya.mail.ru.sketchbook"
+        applicationId "margarita_bobrovitskaya.mail.ru.sketchbook2"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
